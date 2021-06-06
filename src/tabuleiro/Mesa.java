@@ -7,6 +7,9 @@ public class Mesa {
 	private Peca[][] pecas;
 	
 	public Mesa(int rows, int columns) {
+		if (rows < 1 || columns < 1) {
+			throw new ExcecaoDaMesa("Erro ao criar a mesa: É necessário que exista pelo menos 1 linha e 1 coluna");
+		}
 		this.rows = rows;
 		this.columns = columns;
 		pecas = new Peca[rows][columns];
@@ -16,29 +19,43 @@ public class Mesa {
 		return rows;
 	}
 
-	public void setRows(int rows) {
-		this.rows = rows;
-	}
-
 	public int getColumns() {
 		return columns;
 	}
-
-	public void setColumns(int columns) {
-		this.columns = columns;
-	}
 	
 	public Peca pecas(int row, int column) {
+		if (!posicaoExists(row, column)) {
+			throw new ExcecaoDaMesa("Posição não identificada na mesa!");
+		}
 		return pecas[row][column];
 	}
 	
 	public Peca pecas(Posicao posicao) {
+		if (!posicaoExists(posicao)) {
+			throw new ExcecaoDaMesa("Posição não identificada na mesa!");
+		}
 		return pecas[posicao.getRow()][posicao.getColumn()];
 	}
 	
 	public void mesaPeca(Peca peca, Posicao posicao) {
+		if (umaPeca(posicao)) {
+			throw new ExcecaoDaMesa("Já há uma peça na posição escolhida " + posicao);
+		}
 		pecas[posicao.getRow()][posicao.getColumn()] = peca;
 		peca.posicao = posicao;
 	}
+	private boolean posicaoExists(int row, int column) {
+		return row >= 0 && row < rows && column >= 0 && column < columns;
+	}
 	
+	public boolean posicaoExists(Posicao posicao) {
+		return posicaoExists(posicao.getRow(), posicao.getColumn());
+	}
+	
+	public boolean umaPeca(Posicao posicao) {
+		if (!posicaoExists(posicao)) {
+			throw new ExcecaoDaMesa("Posição não identificada na mesa!");
+		}
+		return pecas(posicao) != null;
+	}
 }
