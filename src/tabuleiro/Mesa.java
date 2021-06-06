@@ -1,5 +1,7 @@
 package tabuleiro;
 
+import javax.swing.text.Position;
+
 public class Mesa {
 	
 	private int rows;
@@ -44,6 +46,20 @@ public class Mesa {
 		pecas[posicao.getRow()][posicao.getColumn()] = peca;
 		peca.posicao = posicao;
 	}
+	
+	public Peca removerPeca(Posicao posicao) {
+		if (!posicaoExists(posicao)) {
+			throw new ExcecaoDaMesa("Posição não disponível na mesa");
+		}
+		if (pecas(posicao) == null) {
+			return null;
+		}
+		Peca aux = pecas(posicao);
+		aux.posicao = null;
+		pecas[posicao.getRow()][posicao.getColumn()] = null;
+		return aux;
+	}
+	
 	private boolean posicaoExists(int row, int column) {
 		return row >= 0 && row < rows && column >= 0 && column < columns;
 	}

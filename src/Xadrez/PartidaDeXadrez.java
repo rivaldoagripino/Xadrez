@@ -6,6 +6,8 @@ import Xadrez.pecas.Dama;
 import Xadrez.pecas.Rei;
 import Xadrez.pecas.Torre;
 import tabuleiro.Mesa;
+import tabuleiro.Peca;
+import tabuleiro.Posicao;
 
 public class PartidaDeXadrez {//AQUI FICARÁ AS REGRAS DO JOGO DE XADREZ
 	
@@ -24,6 +26,27 @@ public class PartidaDeXadrez {//AQUI FICARÁ AS REGRAS DO JOGO DE XADREZ
 			}
 		}
 		return mat;
+	}
+	
+	public PecaDeXadrez performMovimentoXadrez(PosicaoXadrez sourcePosicao, PosicaoXadrez targetPosicao) {
+		Posicao source = sourcePosicao.toPosicao();
+		Posicao target = targetPosicao.toPosicao();
+		validacaoSourcePosicao(source);
+		Peca capturacaoPeca = makeMove(source, target);
+		return (PecaDeXadrez)capturacaoPeca;
+	}
+	
+	private Peca makeMove (Posicao source, Posicao target) {
+		Peca p = mesa.removerPeca(source);
+		Peca capturacaoPeca = mesa.removerPeca(target);
+		mesa.mesaPeca(p, target);
+		return capturacaoPeca;
+	}
+	
+	private void validacaoSourcePosicao (Posicao posicao) {
+		if (!mesa.umaPeca(posicao)) {
+			throw new ExcecaoDoXadrez("Não existe peça na posição informada.");
+		}
 	}
 	
 	private void mesaNovaMesa(char column, int row, PecaDeXadrez peca) {
