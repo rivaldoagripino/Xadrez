@@ -36,4 +36,9 @@ public class Mesa {
 		return pecas[posicao.getRow()][posicao.getColumn()];
 	}
 	
+	public void mesaPeca(Peca peca, Posicao posicao) {
+		pecas[posicao.getRow()][posicao.getColumn()] = peca;
+		peca.posicao = posicao;
+	}
+	
 }
