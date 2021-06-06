@@ -33,19 +33,20 @@ public class PartidaDeXadrez {//AQUI FICARÁ AS REGRAS DO JOGO DE XADREZ
 	private void inicio() {
 		mesaNovaMesa('a', 8, new Torre(mesa, Cor.PRETO));
 		mesaNovaMesa('h', 8, new Torre(mesa, Cor.PRETO));
-		mesaNovaMesa('a', 1, new Torre(mesa, Cor.BRANCO));
-		mesaNovaMesa('h', 1, new Torre(mesa, Cor.BRANCO));
-		mesaNovaMesa('e', 1, new Rei(mesa, Cor.BRANCO));
-		mesaNovaMesa('e', 8, new Rei(mesa, Cor.PRETO));
-		mesaNovaMesa('d', 1, new Dama(mesa, Cor.BRANCO));
-		mesaNovaMesa('d', 8, new Dama(mesa, Cor.PRETO));
-		mesaNovaMesa('b', 8, new Cavalo(mesa, Cor.PRETO));
-		mesaNovaMesa('g', 8, new Cavalo(mesa, Cor.PRETO));
-		mesaNovaMesa('b', 1, new Cavalo(mesa, Cor.BRANCO));
-		mesaNovaMesa('g', 1, new Cavalo(mesa, Cor.BRANCO));
 		mesaNovaMesa('c', 8, new Bispo(mesa, Cor.PRETO));
 		mesaNovaMesa('f', 8, new Bispo(mesa, Cor.PRETO));
+		mesaNovaMesa('b', 8, new Cavalo(mesa, Cor.PRETO));
+		mesaNovaMesa('g', 8, new Cavalo(mesa, Cor.PRETO));
+		mesaNovaMesa('d', 8, new Dama(mesa, Cor.PRETO));		
+		mesaNovaMesa('e', 8, new Rei(mesa, Cor.PRETO));
+
+		mesaNovaMesa('e', 1, new Rei(mesa, Cor.BRANCO));
+		mesaNovaMesa('d', 1, new Dama(mesa, Cor.BRANCO));
+		mesaNovaMesa('b', 1, new Cavalo(mesa, Cor.BRANCO));
+		mesaNovaMesa('g', 1, new Cavalo(mesa, Cor.BRANCO));
 		mesaNovaMesa('c', 1, new Bispo(mesa, Cor.BRANCO));
 		mesaNovaMesa('f', 1, new Bispo(mesa, Cor.BRANCO));
+		mesaNovaMesa('a', 1, new Torre(mesa, Cor.BRANCO));
+		mesaNovaMesa('h', 1, new Torre(mesa, Cor.BRANCO));
 	}
 }
