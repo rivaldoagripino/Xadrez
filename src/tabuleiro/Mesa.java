@@ -28,5 +28,12 @@ public class Mesa {
 		this.columns = columns;
 	}
 	
+	public Peca pecas(int row, int column) {
+		return pecas[row][column];
+	}
+	
+	public Peca pecas(Posicao posicao) {
+		return pecas[posicao.getRow()][posicao.getColumn()];
+	}
 	
 }

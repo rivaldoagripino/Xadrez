@@ -1,12 +1,13 @@
 package application;
 
-import tabuleiro.Mesa;
+import Xadrez.PartidaDeXadrez;
 
 public class Principal {
 
 	public static void main(String[] args) {
 		
-		Mesa mesa = new Mesa(8, 8);
+		PartidaDeXadrez partida = new PartidaDeXadrez();
+		UI.printMesa(partida.getPecas());
 	}
 
 }
