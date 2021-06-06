@@ -6,7 +6,6 @@ import Xadrez.pecas.Dama;
 import Xadrez.pecas.Rei;
 import Xadrez.pecas.Torre;
 import tabuleiro.Mesa;
-import tabuleiro.Posicao;
 
 public class PartidaDeXadrez {//AQUI FICARÁ AS REGRAS DO JOGO DE XADREZ
 	
@@ -27,22 +26,26 @@ public class PartidaDeXadrez {//AQUI FICARÁ AS REGRAS DO JOGO DE XADREZ
 		return mat;
 	}
 	
+	private void mesaNovaMesa(char column, int row, PecaDeXadrez peca) {
+		mesa.mesaPeca(peca, new PosicaoXadrez(column, row).toPosicao());
+	}
+	
 	private void inicio() {
-		mesa.mesaPeca(new Torre(mesa, Cor.PRETO), new Posicao(0, 0));
-		mesa.mesaPeca(new Torre(mesa, Cor.PRETO), new Posicao(0, 7));
-		mesa.mesaPeca(new Torre(mesa, Cor.BRANCO), new Posicao(7, 0));
-		mesa.mesaPeca(new Torre(mesa, Cor.BRANCO), new Posicao(7, 7));
-		mesa.mesaPeca(new Rei(mesa, Cor.BRANCO), new Posicao(0, 4));
-		mesa.mesaPeca(new Rei(mesa, Cor.PRETO), new Posicao(7, 4));
-		mesa.mesaPeca(new Dama(mesa, Cor.BRANCO), new Posicao(0, 3));
-		mesa.mesaPeca(new Dama(mesa, Cor.PRETO), new Posicao(7, 3));
-		mesa.mesaPeca(new Cavalo(mesa, Cor.PRETO), new Posicao(0, 1));
-		mesa.mesaPeca(new Cavalo(mesa, Cor.PRETO), new Posicao(0, 6));
-		mesa.mesaPeca(new Cavalo(mesa, Cor.BRANCO), new Posicao(7, 1));
-		mesa.mesaPeca(new Cavalo(mesa, Cor.BRANCO), new Posicao(7, 6));
-		mesa.mesaPeca(new Bispo(mesa, Cor.PRETO), new Posicao(0, 2));
-		mesa.mesaPeca(new Bispo(mesa, Cor.PRETO), new Posicao(0, 5));
-		mesa.mesaPeca(new Bispo(mesa, Cor.BRANCO), new Posicao(7, 2));
-		mesa.mesaPeca(new Bispo(mesa, Cor.BRANCO), new Posicao(7, 5));
+		mesaNovaMesa('a', 8, new Torre(mesa, Cor.PRETO));
+		mesaNovaMesa('h', 8, new Torre(mesa, Cor.PRETO));
+		mesaNovaMesa('a', 1, new Torre(mesa, Cor.BRANCO));
+		mesaNovaMesa('h', 1, new Torre(mesa, Cor.BRANCO));
+		mesaNovaMesa('e', 1, new Rei(mesa, Cor.BRANCO));
+		mesaNovaMesa('e', 8, new Rei(mesa, Cor.PRETO));
+		mesaNovaMesa('d', 1, new Dama(mesa, Cor.BRANCO));
+		mesaNovaMesa('d', 8, new Dama(mesa, Cor.PRETO));
+		mesaNovaMesa('b', 8, new Cavalo(mesa, Cor.PRETO));
+		mesaNovaMesa('g', 8, new Cavalo(mesa, Cor.PRETO));
+		mesaNovaMesa('b', 1, new Cavalo(mesa, Cor.BRANCO));
+		mesaNovaMesa('g', 1, new Cavalo(mesa, Cor.BRANCO));
+		mesaNovaMesa('c', 8, new Bispo(mesa, Cor.PRETO));
+		mesaNovaMesa('f', 8, new Bispo(mesa, Cor.PRETO));
+		mesaNovaMesa('c', 1, new Bispo(mesa, Cor.BRANCO));
+		mesaNovaMesa('f', 1, new Bispo(mesa, Cor.BRANCO));
 	}
 }
