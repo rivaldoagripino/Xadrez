@@ -15,10 +15,10 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Estrutura da mesa e a imprimindo
 - [x] Colocando as peças na mesa
 - [x] Criando exceções para a mesa
-- [ ] Criando exceções para peças e posições
+- [x] Criando exceções para peças e posições
 - [x] Adicionado novas peças na mesa
-- [ ] Adicionado opções de movimento as peças
-- [ ] Adicionando novos tratamentos de exceções e limpeza da tela
+- [x] Adicionado opções de movimento as peças
+- [x] Adicionando novos tratamentos de exceções e limpeza da tela
 - [ ] Possíveis movimentos a peças
 - [ ] Imprimindo possíveis movimentos
 - [ ] Adicionando a troca de turnos entre jogadores
@@ -45,5 +45,3 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 Olá, sou desenvolvedor Junior em back-end e front-end!
 
 - [Cursos](https://web.digitalinnovation.one/users/rivaldoagripino?tab=achievements) - Esses são alguns dos conhecimentos que tenho atualmente como: Java, Html, Css, JavaScript, SpringBoot, Bootstrap, Github, Python, MySQL e Oracle.
-
-[⬆ Voltar ao topo](#xadrez-projeto-0)<br>
