@@ -2,10 +2,10 @@ package tabuleiro;
 
 public class Posicao {
 
-	private int row;
-	private int column;
+	private int row;//encapsulamento
+	private int column;//encapsulamento
 	
-	public Posicao(int row, int column) {
+	public Posicao(int row, int column) {//construtores
 		this.row = row;
 		this.column = column;
 	}
@@ -27,7 +27,7 @@ public class Posicao {
 	}
 
 	@Override
-	public String toString() {
+	public String toString() {//tostring sobre escrevendo
 		return row + ", " + column;
 	}
 	

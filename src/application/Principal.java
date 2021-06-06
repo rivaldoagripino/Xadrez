@@ -1,13 +1,12 @@
 package application;
 
-import tabuleiro.Posicao;
+import tabuleiro.Mesa;
 
 public class Principal {
 
 	public static void main(String[] args) {
 		
-		Posicao pos = new Posicao(3, 5);
-		System.out.println(pos);
+		Mesa mesa = new Mesa(8, 8);
 	}
 
 }
