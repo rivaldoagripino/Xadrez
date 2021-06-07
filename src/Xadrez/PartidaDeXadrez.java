@@ -47,6 +47,10 @@ public class PartidaDeXadrez {//AQUI FICARÁ AS REGRAS DO JOGO DE XADREZ
 		if (!mesa.umaPeca(posicao)) {
 			throw new ExcecaoDoXadrez("Não existe peça na posição informada.");
 		}
+		if (mesa.pecas(posicao).posicaoValida()) {
+			throw new ExcecaoDoXadrez("Não existe movimentos possíveis para a peça.");
+			
+		}
 	}
 	
 	private void mesaNovaMesa(char column, int row, PecaDeXadrez peca) {

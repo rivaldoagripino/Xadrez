@@ -1,7 +1,5 @@
 package tabuleiro;
 
-import javax.swing.text.Position;
-
 public class Mesa {
 	
 	private int rows;
